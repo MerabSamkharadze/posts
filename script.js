@@ -15,6 +15,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       const postDiv = document.createElement("div");
       postDiv.classList.add("post");
       const h1 = document.createElement("h1");
+      h1.classList.add("h1");
       h1.textContent = element.title;
       const p = document.createElement("p");
       p.textContent = element.body;

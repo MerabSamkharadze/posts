@@ -1,0 +1,12 @@
+.post_contant {
+  padding: 30px;
+  background-color: antiquewhite;
+}
+
+.post {
+  background-color: aqua;
+  margin: 20px;
+  padding: 10px 20px;
+  width: 80%;
+  border-radius: 20px;
+}
