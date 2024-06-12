@@ -1,6 +1,11 @@
 "use strict";
 
 const post_contant = document.querySelector(".post_contant");
+const overal = document.querySelector(".overal");
+const post_side = document.querySelector(".post_side");
+const close = document.getElementById("close");
+const h2 = document.getElementById("h2");
+const h1Header = document.getElementById("h1");
 
 fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
   .then((response) => {
@@ -26,15 +31,24 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       postDiv.appendChild(p);
       postDiv.appendChild(openBtn);
       fragment.appendChild(postDiv);
+
       openBtn.addEventListener("click", function () {
         p.classList.toggle("none");
-        openBtn.textContent === "Red Here"
+        openBtn.textContent === "Read Here"
           ? (openBtn.textContent = "Hide")
-          : (openBtn.textContent = "Red Here");
+          : (openBtn.textContent = "Read Here");
       });
-      //   postDiv.addEventListener("click", function () {
-      //     p.classList.toggle("none");
-      //   });
+
+      postDiv.addEventListener("click", function (e) {
+        let content = e.target.innerHTML;
+
+        if (content === "Hide" || content === "Read Here") return;
+        h1Header.textContent = element.title;
+        h2.textContent = element.body;
+        post_side.appendChild(h1Header);
+        post_side.appendChild(h2);
+        overal.classList.remove("none");
+      });
     });
     post_contant.appendChild(fragment);
   })
@@ -43,3 +57,14 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
     h1.textContent = "Server Problem";
     document.body.appendChild(h1);
   });
+
+close.addEventListener("click", () => {
+  overal.classList.add("none");
+  h2.innerHTML = "";
+  h1Header.innerHTML = "";
+});
+overal.addEventListener("click", () => {
+  overal.classList.add("none");
+  h1Header.innerHTML = "";
+  h2.innerHTML = "";
+});
