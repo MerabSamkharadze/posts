@@ -34,14 +34,13 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
 
       openBtn.addEventListener("click", function () {
         p.classList.toggle("none");
-        openBtn.textContent === "Read Here"
-          ? (openBtn.textContent = "Hide")
-          : (openBtn.textContent = "Read Here");
+        openBtn.textContent === "Hide"
+          ? (openBtn.textContent = "Read Here")
+          : (openBtn.textContent = "Hide");
       });
 
       postDiv.addEventListener("click", function (e) {
         let content = e.target.innerHTML;
-
         if (content === "Hide" || content === "Read Here") return;
         h1Header.textContent = element.title;
         h2.textContent = element.body;
