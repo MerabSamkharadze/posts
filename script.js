@@ -19,9 +19,13 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       h1.textContent = element.title;
       const p = document.createElement("p");
       p.textContent = element.body;
+      p.classList.add("none");
       postDiv.appendChild(h1);
       postDiv.appendChild(p);
       fragment.appendChild(postDiv);
+      postDiv.addEventListener("click", function () {
+        p.classList.toggle("none");
+      });
     });
     post_contant.appendChild(fragment);
   })
