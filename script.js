@@ -26,7 +26,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       p.textContent = element.body;
       p.classList.add("none");
       const openBtn = document.createElement("button");
-      openBtn.textContent = "Red Here";
+      openBtn.textContent = "Read Here";
       postDiv.appendChild(h1);
       postDiv.appendChild(p);
       postDiv.appendChild(openBtn);
@@ -34,9 +34,11 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
 
       openBtn.addEventListener("click", function () {
         p.classList.toggle("none");
-        openBtn.textContent === "Hide"
-          ? (openBtn.textContent = "Read Here")
-          : (openBtn.textContent = "Hide");
+        console.log(openBtn.textContent);
+
+        openBtn.textContent === "Read Here"
+          ? (openBtn.textContent = "Hide")
+          : (openBtn.textContent = "Read Here");
       });
 
       postDiv.addEventListener("click", function (e) {
