@@ -20,12 +20,21 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       const p = document.createElement("p");
       p.textContent = element.body;
       p.classList.add("none");
+      const openBtn = document.createElement("button");
+      openBtn.textContent = "Red Here";
       postDiv.appendChild(h1);
       postDiv.appendChild(p);
+      postDiv.appendChild(openBtn);
       fragment.appendChild(postDiv);
-      postDiv.addEventListener("click", function () {
+      openBtn.addEventListener("click", function () {
         p.classList.toggle("none");
+        openBtn.textContent === "Red Here"
+          ? (openBtn.textContent = "Hide")
+          : (openBtn.textContent = "Red Here");
       });
+      //   postDiv.addEventListener("click", function () {
+      //     p.classList.toggle("none");
+      //   });
     });
     post_contant.appendChild(fragment);
   })

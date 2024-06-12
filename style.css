@@ -3,7 +3,7 @@
 }
 
 .post {
-  background-color: aqua;
+  background-color: rgba(225, 169, 105, 0.701);
   margin: 20px;
   padding: 10px 20px;
   width: 80%;
@@ -16,4 +16,16 @@
 }
 .none {
   display: none;
+}
+button {
+  font-size: 20px;
+  width: 150px;
+  border: thistle;
+  color: brown;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(202, 172, 202);
+  color: rgb(243, 236, 236);
 }
