@@ -35,7 +35,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
         if (!p.style.height) {
           p.style.height = "60px";
         } else {
-          p.style.height = "0";
+          p.style.height = "";
         }
 
         openBtn.textContent === "Read Here"
