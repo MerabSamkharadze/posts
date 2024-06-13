@@ -34,8 +34,6 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
 
       openBtn.addEventListener("click", function () {
         p.classList.toggle("none");
-        console.log(openBtn.textContent);
-
         openBtn.textContent === "Read Here"
           ? (openBtn.textContent = "Hide")
           : (openBtn.textContent = "Read Here");
@@ -64,8 +62,10 @@ close.addEventListener("click", () => {
   h2.innerHTML = "";
   h1Header.innerHTML = "";
 });
-overal.addEventListener("click", () => {
-  overal.classList.add("none");
-  h1Header.innerHTML = "";
-  h2.innerHTML = "";
+overal.addEventListener("click", function (e) {
+  if (e.target === this) {
+    overal.classList.add("none");
+    h1Header.innerHTML = "";
+    h2.innerHTML = "";
+  } else return;
 });
