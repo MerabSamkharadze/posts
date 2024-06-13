@@ -24,7 +24,6 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       h1.textContent = element.title;
       const p = document.createElement("p");
       p.textContent = element.body;
-      p.classList.add("none");
       const openBtn = document.createElement("button");
       openBtn.textContent = "Read Here";
       postDiv.appendChild(h1);
@@ -33,7 +32,12 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
       fragment.appendChild(postDiv);
 
       openBtn.addEventListener("click", function () {
-        p.classList.toggle("none");
+        if (!p.style.height) {
+          p.style.height = "60px";
+        } else {
+          p.style.height = "0";
+        }
+
         openBtn.textContent === "Read Here"
           ? (openBtn.textContent = "Hide")
           : (openBtn.textContent = "Read Here");
@@ -46,6 +50,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
         h2.textContent = element.body;
         post_side.appendChild(h1Header);
         post_side.appendChild(h2);
+
         overal.classList.remove("none");
       });
     });
